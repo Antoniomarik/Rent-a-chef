@@ -3,6 +3,7 @@
 ##Table of contents
 ---
   -[General info](#general-info)
+---
   -[Features](#features)
   -[Database model](#database-model)
   -[Technologies & languages](#technologies-languages)
