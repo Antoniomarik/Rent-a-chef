@@ -20,11 +20,17 @@ In a few clicks, choose what kind of culinary show you want, sit back and enjoy 
  Features
  ---
  *Two types of users
+ ---
   *Private chefs
+ ---
   *Users of the culinary service
+ ---
  *Multiple culinary packages to choose from
+---
  *Search filter
+----
  *Comments and reviews
+---
  
  Database model
  ---
