@@ -1,30 +1,33 @@
 # Rent-A-Chef
 
-#Table of contents
+Table of contents
 ---
   -[General info](#general-info)
 ---
   -[Features](#features)
+---
   -[Database model](#database-model)
-  -[Technologies & languages](#technologies-languages)
+---
+  -[Technologies & languages](#technologies--languages)
+---
   
- ##General info
+ General info
  ---
  <p>description</p>
  
- ##Features
+ Features
  ---
  *List of f
  
- ##Database model
+ Database model
  ---
  to be done
  
-##Technologies & languages
+Technologies & languages
 ---
 *list
 
-#Authors
+Authors
 ---
 Mijo Matijevic
 Antonio Maric
