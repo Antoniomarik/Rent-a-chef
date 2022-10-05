@@ -13,7 +13,9 @@ Table of contents
   
  General info
  ---
- <p>description</p>
+ <p>Your Private Chef will arrive with all the ingredients needed to prepare your dreamed meal.
+
+In a few clicks, choose what kind of culinary show you want, sit back and enjoy your unique culinary experience!</p>
  
  Features
  ---
