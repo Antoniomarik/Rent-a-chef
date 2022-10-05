@@ -3,13 +3,12 @@
 Table of contents
 ---
   -[General info](#general-info)
----
+
   -[Features](#features)
----
+  
   -[Database model](#database-model)
----
+
   -[Technologies & languages](#technologies--languages)
----
   
  General info
  ---
@@ -19,34 +18,31 @@ In a few clicks, choose what kind of culinary show you want, sit back and enjoy 
  
  Features
  ---
- *Two types of users
- ---
-  *Private chefs
- ---
-  *Users of the culinary service
- ---
- *Multiple culinary packages to choose from
----
- *Search filter
-----
- *Comments and reviews
----
+ <ul>
+    <li>Two types of users ( Private chefs, Users of the culinary service)
+    <li>Multiple culinary packages to choose from
+    <li>Search filter
+    <li>Comments and reviews
+ </ul>
  
  Database model
  ---
- to be done
+ To be done
  
 Technologies & languages
 ---
-*Java
-*HTML
-*CSS
-*Spring Boot
-*Tymeleaf
+<ul>
+   <li>Java
+   <li>HTML
+   <li>CSS
+   <li>Spring Boot
+   <li>Tymeleaf
+  </ul>
 
 Authors
 ---
 Mijo Matijevic
+<br>
 Antonio Maric
 
   
