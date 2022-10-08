@@ -27,7 +27,6 @@ In a few clicks, choose what kind of culinary show you want, sit back and enjoy 
  
  Database model
  ---
- https://app.diagrams.net/
  
 Technologies & languages
 ---
