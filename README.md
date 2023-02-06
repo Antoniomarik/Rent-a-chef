@@ -41,7 +41,7 @@ Technologies & languages
    <li>CSS
    <li>Spring Boot
    <li>Tymeleaf
-   <li>MongoDB
+   <li>MySql
   </ul>
 
 Authors
