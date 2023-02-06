@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<!-- Created By Mima -->
+<head>
+   <meta charset="utf-8">
+   <title>Rent A Chef</title>
+   <link rel="stylesheet" href="dashboard.css">
+   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+   <nav>
+      <ul>
+         <li class="items"><a href="/Users/admin/Desktop/rentChef/index.html">HOME</a></li>
+         <li class="items"><a href="#">ABOUT</a></li>
+         <li class="items"><a href="#">Rent A Chef</a></li>
+         <li class="items"><a href="#">CONTACT</a></li>
+         <li class="items"><a href="/Users/admin/Desktop/rentChef/signin.html">BECOME CHEF</a></li>
+         <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
+      </ul>
+     
+     
+   </nav>
+
+   <div class="container">
+      <div class="card">
+         
+         <div class="inner-box" id="card">
+            <div class="card-front">
+               <h2>Dashboard</h2>
+               <form th:object="${sampleInputs}" method="get">
+                  <img src="/Users/admin/Desktop/rentChef/img/chefProfile.jpg">
+                  <br>
+                  <br>
+                  <label for="name">Name:</label> <a th:object="${name}">Horvat</a><button class="edit">Change</button>    
+                  <label for="email">E-mail:</label> <a th:object="${email}">horvat@gmail.com</a><<button class="edit">Change</button>    
+                  <label for="password">Password:</label> <a th:object="${password}">********</a><button class="edit">Change</button>  
+                  <label for="location">Location:</label> <a th:object="${location}">Split</a><button class="edit">Change</button>    
+                  <br>
+
+                   <div id="wrap">
+      <div id="columns" class="columns_4">
+         <figure>
+            <img src="#">
+            <figcaption th:object="${menuType}"></figcaption>
+            <span class="price">$88</span>
+            <a class="button" href="#">Delete</a>
+            <a class="button" href="#">Edit</a>
+         </figure>
+
+         <!-- Ovdi izmedu u 57oj liniji san maka tekst jer ka vucemo tekst iz baze za ime menia  nezz jel to dobro ili triba i rucno dodat tekst  javi -->
+   
+         <figure>
+            <img src="#">
+            <figcaption th:object="${menuType}"></figcaption>
+            <span class="price">$73</span>
+            <a class="button" href="#">Delete</a>
+            <a class="button" href="#">Edit</a>
+         </figure>
+   
+         <figure>
+           <img src="#">
+           <figcaption th:object="${menuType}"></figcaption>
+           <span class="price">$33</span>
+            <a class="button" href="#">Delete</a>
+            <a class="button" href="#">Edit</a>
+         </figure>
+         <figure>
+           <img src="#">
+           <figcaption th:object="${menuType}"></figcaption>
+           <span class="price">$33</span>
+            <a class="button" href="#">Delete</a>
+            <a class="button" href="#">Edit</a>
+         </figure>
+  
+       </div>
+
+                
+ 
+                  <a class="button" type="submit" href="#">ADD NEW MENU</button>
+                  
+               </form>  
+
+               <a class="button" href="#">Log out</a>
+
+              
+            </div>
+         </div>
+      </div>
+   </div>  
+   
+   <script>
+      $(document).ready(function(){
+        $('.btn').click(function(){
+          $('.items').toggleClass("show");
+          $('ul li').toggleClass("hide");
+        });
+      });
+   </script>
+
+</body>
+</html>

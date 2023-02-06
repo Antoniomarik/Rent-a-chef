@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat',sans-serif;
+}
+body{
+
+}
+
+nav{
+  background-image: url("/img/chefBlurred.jpeg");
+  padding: 40px 40px;
+  
+}
+nav ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+nav ul li{
+  padding: 15px 0;
+  cursor: pointer;
+}
+nav ul li.items{
+  position: relative;
+  width: auto;
+  margin: 0 16px;
+  text-align: center;
+  order: 3;
+}
+nav ul li.items:after{
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 5px;
+  height: 2px;
+  width: 100%;
+  background: white;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+nav ul li.items:hover:after{
+  opacity: 1;
+  bottom: 8px;
+}
+nav ul li.logo{
+  flex: 1;
+  cursor: default;
+  user-select: none;
+  max-width: 100%;
+  max-height: 100%;
+  
+}
+
+nav ul li a{
+  color: black;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: .4s;
+}
+nav ul li:hover a{
+  color: #FFFFFF;
+}
+nav ul li i{
+  font-size: 23px;
+}
+nav ul li.btn{
+  display: none;
+}
+nav ul li.btn.hide i:before{
+  content: '\f00d';
+}
+@media all and (max-width: 900px){
+  nav{
+    padding: 5px 30px;
+  }
+  nav ul li.items{
+    width: 100%;
+    display: none;
+  }
+  nav ul li.items.show{
+    display: block;
+  }
+  nav ul li.btn{
+    display: block;
+  }
+  nav ul li.items:hover{
+    border-radius: 50px;
+    box-shadow: inset 0 0 5px black,
+                inset 0 0 10px black;
+  }
+  nav ul li.items:hover:after{
+    opacity: 0;
+  }
+}
+
+
+img{
+  width: 60px;
+  height: 60px;
+  /*margin: 1px auto;
+  display: block;
+  */
+  position: flex;
+  top: 5px;
+  left: 5px;
+}
+
+.img-front{
+  top: 80px;
+  width: 100%;
+  height: auto;
+
+
+}
+
+.button{
+  background-color: #FFFFFF;
+  border: #FFFFFF;
+  color: black;
+  padding: 1px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;  
+  border-radius: 12px; 
+  transition: transform .2s; /* Animation */
+  width: 300px;
+  height: 100px;
+  margin: auto;
+  box-shadow: 0 0 40px 10px rgba(0,0,0,0.26);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.button:hover{
+  transform: scale(1.5);
+}
+
+.footer{
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  text-align: center;
+
+}
+

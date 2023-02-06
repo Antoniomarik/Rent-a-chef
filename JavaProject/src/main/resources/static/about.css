@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat',sans-serif;
+}
+
+body{
+  background-image: url("/Users/admin/Desktop/rentChef/img/frontChef.jpg");
+
+}
+
+nav{
+  background-image: url("/Users/admin/Desktop/rentChef/img/blured.jpg");
+  padding: 40px 40px;
+  
+}
+nav ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+nav ul li{
+  padding: 15px 0;
+  cursor: pointer;
+}
+nav ul li.items{
+  position: relative;
+  width: auto;
+  margin: 0 16px;
+  text-align: center;
+  order: 3;
+}
+nav ul li.items:after{
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 5px;
+  height: 2px;
+  width: 100%;
+  background: white;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+nav ul li.items:hover:after{
+  opacity: 1;
+  bottom: 8px;
+}
+nav ul li.logo{
+  flex: 1;
+  cursor: default;
+  user-select: none;
+  max-width: 100%;
+  max-height: 100%;
+  
+}
+
+nav ul li a{
+  color: black;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: .4s;
+}
+nav ul li:hover a{
+  color: #FFFFFF;
+}
+nav ul li i{
+  font-size: 23px;
+}
+nav ul li.btn{
+  display: none;
+}
+nav ul li.btn.hide i:before{
+  content: '\f00d';
+}
+@media all and (max-width: 900px){
+  nav{
+    padding: 5px 30px;
+  }
+  nav ul li.items{
+    width: 100%;
+    display: none;
+  }
+  nav ul li.items.show{
+    display: block;
+  }
+  nav ul li.btn{
+    display: block;
+  }
+  nav ul li.items:hover{
+    border-radius: 50px;
+    box-shadow: inset 0 0 5px black,
+                inset 0 0 10px black;
+  }
+  nav ul li.items:hover:after{
+    opacity: 0;
+  }
+}
+
+
+img{
+  width: 60px;
+  height: 60px;
+  /*margin: 1px auto;
+  display: block;
+  */
+  position: flex;
+  top: 5px;
+  left: 5px;
+}
+
+.wrapper{
+  margin-top: 60px;
+  text-align: center;
+
+}
+
+.wrapper h1{
+  font-size: 48px;
+  color: black;
+  margin-bottom: 25px;
+
+}
+
+.wrapper .our_team{
+  display: flex;
+  width: auto;
+  justify-content: safe center;
+}
+
+.wrapper .our_team .team_member{
+  width: 250px;
+  margin: 10px;
+  background: white;
+  padding: 20px 10px;
+  border-radius: 15px;
+  box-shadow: 0 0 40px 10px rgba(0,0,0,0.26);
+
+}
+
+.wrapper .our_team .team_member:hover{
+  transform: scale(1.1);
+}
+
+
+.wrapper .our_team .team_member .member_img{
+  background: #e9e5fa;
+  max-width: 190px;
+  width: 100%;
+  height: 190px;
+  margin: 0 auto;
+  border-radius: 50%;
+  position: relative;
+}
+
+.wrapper .our_team .team_member .member_img img{
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper .our_team .team_member h3{
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 18px;
+  letter-spacing: 2px;
+  margin: 15px 0 0;
+
+}
+
+.wrapper .our_team .team_member span{
+  font-size: 10px;
+
+}
+
+
+.wrapper .our_team .team_member p{
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.footer{
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  text-align: center;
+
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="utf-8">
+   <title>Rent A Chef</title>
+   <link rel="stylesheet" href="main.css">
+   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <style>
+      body{
+      background-image:url("chef.jpeg");
+      }
+      nav{
+         background-image:url("chefBlurred.jpeg");
+      }
+   </style>
+
+</head>
+
+<body>
+   <nav th:fragment="navbar">
+      <ul>
+         <li class="items"><a th:href="@{/}">HOME</a></li>
+         <li class="items"><a th:href="@{rentachef}">Rent A Chef</a></li>
+         <li class="items"><a th:href="@{/about}">ABOUT</a></li>
+         <li class="items"><a th:href="@{/contact}">CONTACT</a></li>
+         <li class="items"><a th:href="@{signin}">BECOME CHEF</a></li>
+
+         <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
+      </ul>
+     
+     
+   </nav>
+     <a th:href="@{rentachef}"> <button class="button" th:href="@{rentachef}">Rent your private chef here</button></a>
+  
+
+   <script>
+      $(document).ready(function(){
+        $('.btn').click(function(){
+          $('.items').toggleClass("show");
+          $('ul li').toggleClass("hide");
+        });
+      });
+   </script>
+
+   <style th:inline="text">
+    body{
+        <img th:src="@{/images/test.png}"/>
+
+    }
+   </style>
+
+
+</body>
+</html>

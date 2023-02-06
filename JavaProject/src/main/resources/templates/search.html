@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Rent A Chef</title>
+  <link rel="stylesheet" href="/rentachef.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+      body{
+      background-image:url("chef.jpeg");
+      }
+      nav{
+         background-image:url("chefBlurred.jpeg");
+      }
+   </style>
+
+</head>
+
+<body>
+
+<div th:insert="index :: navbar">  </div>
+
+<div class="container">
+    <h3>Rent A Chef</h3>
+    <form th:action="@{/search}" th:object="${location}" method="get">
+    <div class="search">
+      <input type="text" name="location" th:value="${location}"/>
+      <input type="submit" value="Search"/>
+      <button type="submit" class="searchButton">
+        <i class="fa fa-search"></i>
+      </button>
+    </div>
+  </form>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Location</th>
+    </tr>
+    <tr th:each="user : ${users}">
+      <td th:text="${user.username}"></td>
+      <td th:text="${user.location}"></td>
+    </tr>
+  </table>
+
+</div>
+
+<div id="wrap">
+  <div id="columns" class="columns_4">
+    <figure th:each="user: ${listUsers}">
+      <img src="/Users/admin/Desktop/rentChef/img/chefProfile.jpg">
+      <figcaption th:text="${user.username}">Username</figcaption>
+      <a class="button" href="#onclick">Rent</a>
+    </figure>
+  </div>
+
+</div>
+
+<div id="onclick" class="overlay">
+  <div class="popup">
+    <h2>Mate Jankovic</h2>
+    <a class="close" href="#">&times;</a>
+    <div class="content">
+      <img class="pic" style='height: 20%;width: 20%;object-fit: contain' src="/Users/admin/Desktop/rentChef/img/chefProfile.jpg">
+      <br>
+      <a>Mate Jankovic</a>
+      <br>
+      <a>Split</a>
+      <br>
+      <a>2023</a>
+      <br>
+      <a>10.01. - 12.01.</a>
+      <br>
+      <a>Choose menu</a>
+      <br>
+      <br>
+
+
+      <figure>
+        <img src="/Users/admin/Desktop/rentChef/img/food.jpg">
+        <figcaption>Vegan Menu</figcaption>
+        <span class="description">Description</span>
+        <br>
+        <span class="price">$20</span>
+        <a class="button" href="#onclick">Rent</a>
+      </figure>
+
+
+      <figure>
+        <img src="/Users/admin/Desktop/rentChef/img/food.jpg">
+        <figcaption>Meat Menu</figcaption>
+        <span class="description">Description</span>
+        <br>
+        <span class="price">$20</span>
+        <a class="button" href="#onclick">Rent</a>
+      </figure>
+
+
+      <figure>
+        <img src="/Users/admin/Desktop/rentChef/img/food.jpg">
+        <figcaption>Gluten free Menu</figcaption>
+        <span class="description">Description</span>
+        <br>
+        <span class="price">$20</span>
+        <a class="button" href="#onclick">Rent</a>
+      </figure>
+
+
+
+    </div>
+  </div>
+
+</div>
+
+
+<script>
+      $(document).ready(function(){
+        $('.btn').click(function(){
+          $('.items').toggleClass("show");
+          $('ul li').toggleClass("hide");
+        });
+      });
+   </script>
+
+
+</body>
+</html>

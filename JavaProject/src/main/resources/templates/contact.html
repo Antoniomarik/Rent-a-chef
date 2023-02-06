@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+   <meta charset="utf-8">
+   <title>Rent a Chef</title>
+   <link rel="stylesheet" href="contact.css">
+   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      body{
+      background-image:url("chef.jpeg");
+      }
+      nav{
+         background-image:url("chefBlurred.jpeg");
+      }
+   </style>
+
+</head>
+
+<body>
+
+<div th:insert="index :: navbar">  </div>
+
+ <div class="container">
+      <div class="card">
+         <div class="inner-box" id="card">
+            <div class="card-front">
+               <h2>CONTACT US</h2>
+               <form action="" method="post">
+                <input label="Name" type="text" class="input-box" placeholder="Your name">
+                  <input type="email" class="input-box" placeholder="Your Email">
+                  <input type="text" class="input-box" placeholder="Subject" >
+                  <textarea id="combo" class="input-box" placeholder="Message"> </textarea>
+                  <button type="submit">Submit</button>
+                  
+               </form>           
+              
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <script>
+      $(document).ready(function(){
+        $('.btn').click(function(){
+          $('.items').toggleClass("show");
+          $('ul li').toggleClass("hide");
+        });
+      });
+   </script>
+
+</body>
+</html>

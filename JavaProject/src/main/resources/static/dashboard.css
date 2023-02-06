@@ -1,0 +1,382 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat',sans-serif;
+}
+
+body{
+  background-image: url("/Users/admin/Desktop/rentChef/img/frontChef.jpg");
+}
+
+nav{
+  background-image: url("/Users/admin/Desktop/rentChef/img/blured.jpg");
+  padding: 40px 40px;
+  
+}
+nav ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+nav ul li{
+  padding: 15px 0;
+  cursor: pointer;
+}
+nav ul li.items{
+  position: relative;
+  width: auto;
+  margin: 0 16px;
+  text-align: center;
+  order: 3;
+}
+nav ul li.items:after{
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 5px;
+  height: 2px;
+  width: 100%;
+  background: white;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+nav ul li.items:hover:after{
+  opacity: 1;
+  bottom: 8px;
+}
+nav ul li.logo{
+  flex: 1;
+  cursor: default;
+  user-select: none;
+  max-width: 100%;
+  max-height: 100%;
+  
+}
+
+nav ul li a{
+  color: black;
+  font-size: 18px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: .4s;
+}
+nav ul li:hover a{
+  color: #FFFFFF;
+}
+nav ul li i{
+  font-size: 23px;
+}
+nav ul li.btn{
+  display: none;
+}
+nav ul li.btn.hide i:before{
+  content: '\f00d';
+}
+@media all and (max-width: 900px){
+  nav{
+    padding: 5px 30px;
+  }
+  nav ul li.items{
+    width: 100%;
+    display: none;
+  }
+  nav ul li.items.show{
+    display: block;
+  }
+  nav ul li.btn{
+    display: block;
+  }
+  nav ul li.items:hover{
+    border-radius: 50px;
+    box-shadow: inset 0 0 5px black,
+                inset 0 0 10px black;
+  }
+  nav ul li.items:hover:after{
+    opacity: 0;
+  }
+}
+
+
+img{
+  width: 100px;
+  height: 100px;
+  /*margin: 1px auto;
+  display: block;
+  */
+  border-radius: 50%;
+  position: flex;
+  top: 5px;
+  left: 5px;
+}
+
+
+.button{
+  background-color: white;
+  border: none;
+  color: #87B7BF;
+  padding: 1px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;  
+  border-radius: 12px; 
+  transition: transform .2s; /* Animation */
+  width: 100%;
+  height: 40%;
+  margin: 0 auto;
+  box-shadow: 0 0 40px 10px rgba(0,0,0,0.26);
+}
+
+.button:hover{
+  transform: scale(1.5);
+}
+
+.container{
+  width: 100%;
+  height: 130vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 200px;
+  position: absolute;
+
+}
+
+a .edit{
+   color:red;
+}
+
+.card{
+  width: 60%;
+  height: 100%;
+  box-shadow: 0 0 40px 10px rgba(0,0,0,0.26);
+  perspective: 1000px;
+  border-radius: 15px;
+ }
+
+.inner-box{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+
+}
+
+.card-front{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  padding: 55px;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  background-color: #fff;
+  border-radius: 15px;
+
+}
+
+.card h2{
+  font-weight: normal;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  color: black;
+
+}
+
+#combo{
+  resize: none;
+}
+
+.input-box{
+  width: 100%;
+  font-size: 15px;
+  background: #fff; 
+  margin: 6px 0;
+  height: 50px; 
+  padding: 0 10px;
+  box-sizing: border-box;
+  outline: none;
+  text-align: center;
+  color: black;
+}
+
+form input{
+  width: 100%;
+  padding: 10px 5px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid #999;
+  margin-bottom: 10%;
+
+ 
+}
+
+::placeholder{
+  color: black;
+  font-size: 15px;
+  margin: auto auto;
+  padding-top: 5px;
+
+}
+
+button{
+  width: 100%;
+  background: black;
+  border: 1px solid #fff;
+  margin: 15px 0 10px;
+  height: 32px;
+  border-radius: 20px;
+  font-size: 12px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  outline: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover{
+  transform: scale(1.1);
+}
+
+
+
+span{
+  font-size: 13px;
+  margin-left: 10px;
+  color: black;
+
+}
+
+.card .btn{
+  margin-top: 70px;
+}
+
+.card a{
+  color: black;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size: 13px;
+  margin-top: 8px;
+}
+
+
+
+
+.footer{
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  text-align: center;
+
+}
+
+label{
+  font-size: 15px;
+  margin-top: 10%;
+  color: black;
+
+}
+
+select{
+  width: 100%;
+  padding: 0 10px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid #999;
+  margin-bottom: 5%;
+  
+}
+
+.file-upload{
+  color: black;
+}
+
+
+
+
+#wrap{
+  width: 90%;
+  max-width: 1100px;
+  margin: 50px auto;
+}
+.columns_2 figure{
+   width:49%;
+   margin-right:1%;
+}
+.columns_2 figure:nth-child(2){
+  margin-right: 0;
+}
+.columns_3 figure{
+   width:32%;
+   margin-right:1%;
+}
+.columns_3 figure:nth-child(3){
+  margin-right: 0;
+}
+.columns_4 figure{
+   width:24%;
+   margin-right:1%;
+}
+.columns_4 figure:nth-child(4){
+  margin-right: 0;
+}
+.columns_5 figure{
+   width:19%;
+   margin-right:1%;
+}
+.columns_5 figure:nth-child(5){
+  margin-right: 0;
+}
+#columns figure:hover{
+  -webkit-transform: scale(1.1);
+  -moz-transform:scale(1.1);
+  transform: scale(1.1);
+
+}
+#columns:hover figure:not(:hover) {
+  opacity: 0.4;
+}
+div#columns figure {
+  display: inline-block;
+  background: #FEFEFE;
+  border: 2px solid #FAFAFA;
+  box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+  margin: 0 0px 15px;  
+  padding: 15px;
+  padding-bottom: 5px;
+  background: -webkit-linear-gradient(45deg, #FFF, #F9F9F9);
+  opacity: 1;
+  -webkit-transition: all .3s ease;
+  -moz-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+div#columns figure img {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 15px;
+  margin-bottom: 5px;
+}
+
+div#columns figure figcaption {
+  font-size: .9rem;
+  color: #444;
+  line-height: 1.5;
+  height:60px;
+  font-weight:600;
+  text-overflow:ellipsis;
+}

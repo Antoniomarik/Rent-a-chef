@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="utf-8">
+   <title>Rent A Chef</title>
+   <link rel="stylesheet" href="signin.css">
+   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+      body{
+      background-image:url("chef.jpeg");
+      }
+      nav{
+         background-image:url("chefBlurred.jpeg");
+         padding: 40px 40px;
+      }
+   </style>
+
+</head>
+
+<body>
+   <div th:insert="index :: navbar">  </div>
+
+   <div class="container">
+      <div class="card">
+         <div class="inner-box" id="card">
+            <div class="card-front">
+               <!--
+               <h2>LOGIN</h2>
+               <form action="/login">
+                  <input type="email" id="email" name="email" class="input-box" placeholder="Your Email">
+                  <input type="password" id="password" name="password" class="input-box" placeholder="Password">
+                  <button type="submit">Submit</button>
+                  <input type="checkbox"><span>Remember me</span>
+               </form>
+               <button type="button" class="btn" onclick="openRegister()">I'm New Here</button>
+              
+            </div>
+            <div class="card-back">
+            -->
+               <h2>REGISTER</h2>
+               <form th:action="@{/signin}" th:object ="${user}" method="post">
+                  <input type="text" class="input-box" th:field="*{username}" placeholder="Your Name">
+                  <input type="text" class="input-box" th:field="*{location}" placeholder="Your Location">
+                  <input type="email" class="input-box" th:field="*{email}" placeholder="Your Email">
+                  <input type="password" class="input-box" th:field="*{password}" minlength="6" placeholder="Minimum 6 characters">
+                  <button type="submit" class="submit-btn">Submit</button>
+               </form>
+               <a th:href="@{login}"> <button type="button" class="btn" >I've an account</button></a>>
+             
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!--
+   <script>
+      $(document).ready(function(){
+        $('.btn').click(function(){
+          $('.items').toggleClass("show");
+          $('ul li').toggleClass("hide");
+        });
+      });
+
+      var card=document.getElementById("card");
+
+      function openRegister(){
+         card.style.transform="rotateY(-180deg)";
+      }
+
+      function openLogin(){
+         card.style.transform="rotateY(0deg)";
+      }
+
+   </script>
+-->
+</body>
+</html>

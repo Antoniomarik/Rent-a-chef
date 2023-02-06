@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+   <meta charset="utf-8">
+   <title>Rent A Chef</title>
+   <link rel="stylesheet" href="about.css">
+   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+   <style>
+      body{
+      background-image:url("chef.jpeg");
+      }
+      nav{
+         background-image:url("chefBlurred.jpeg");
+      }
+   </style>
+
+</head>
+
+<body>
+<div th:insert="index :: navbar">  </div>
+
+   <div class="wrapper">
+      <h1>OUR TEAM</h1>
+      <div class="our_team">
+         <div class="team_member">
+            <div class="member_img">
+               <img src="/Users/admin/Desktop/rentChef/img/profile.jpg">
+            </div>
+            <h3>Mijo Matijevic</h3>
+            <span>CEO</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+         </div>
+
+         <div class="team_member">
+            <div class="member_img">
+               <img src="/Users/admin/Desktop/rentChef/img/profile.jpg">
+            </div>
+            <h3>Antonio Maric</h3>
+            <span>CEO</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+         </div>
+
+         <div class="team_member">
+            <div class="member_img">
+               <img src="/Users/admin/Desktop/rentChef/img/potato.jpg">
+            </div>
+            <h3>Karlo Hrabar</h3>
+            <span>CEO</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+         </div>
+
+      </div>
+   </div>
+
+   </div> 
+  
+   <script>
+      $(document).ready(function(){
+        $('.btn').click(function(){
+          $('.items').toggleClass("show");
+          $('ul li').toggleClass("hide");
+        });
+      });
+   </script>
+
+</body>
+</html>
