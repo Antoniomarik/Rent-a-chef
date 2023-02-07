@@ -48,7 +48,14 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
+    public List<Menu> getMenu() {
+        return menu;
+    }
+
+    public void setMenu(List<Menu> menu) {
+        this.menu = menu;
+    }
 
     public String getPassword() {
         return password;

@@ -8,11 +8,10 @@
 }
 
 body{
- background: url([@{/img/chef.jpeg}]);
+
 }
 
 nav{
-  background-image: url("");
   padding: 40px 40px;
   
 }
@@ -122,7 +121,7 @@ h3{
 
 .container{
   
-  height: 450px;
+  height: 500px;
   text-align: center;
  
   background: #fff;
@@ -133,7 +132,8 @@ h3{
   flex-direction: column;
   width: 360px;
   margin: 50px auto;
-  opacity:0.5;
+
+  opacity: 0.8;
 }
 
 .container form{
@@ -141,7 +141,7 @@ h3{
   position: absolute;
   top: 100px;
   left: 40px;
-  opacity:0.5;
+ 
 
 }
 
@@ -170,6 +170,7 @@ form input{
   background: transparent;
   border-bottom: 1px solid #999;
   margin-bottom: 10%;
+  z-index: 2;
 
  
 }
@@ -190,6 +191,7 @@ form button{
   color: #FFFFFF;
   border-radius: 15px; 
   cursor: pointer;
+  z-index: 2;
 
 }
 
@@ -275,6 +277,7 @@ div#columns figure figcaption {
 }
 
 a.button{
+  width: 100%;
   padding:10px;
   background:black;
   margin:10px;
@@ -293,12 +296,11 @@ a.button:hover{
 }
 
 .overlay{
-  position: fixed;
+  position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0,0,0,0.6);
   transition: opacity 600ms;
   visibility: hidden;
   opacity: 0;
@@ -311,11 +313,11 @@ a.button:hover{
 
 .popup{
   position: relative;
-  margin: 80px auto;
+  margin: 150px auto;
   padding: 20px;
   background: #fff;
   border-radius: 15px;
-  width: 40%;
+  width: 80%;
   transition: all 3s ease-in-out;
 
 }
@@ -337,7 +339,7 @@ a.button:hover{
 
 .popup .content{
   max-height: 30%;
-  overflow: auto;
+  overflow-y: scroll;
 }
 
 .overlay .popup .content .pic{
@@ -377,6 +379,65 @@ a.button:hover{
   border-radius: 0 5px 5px 0;
   cursor: pointer;
   font-size: 20px;
+}
+
+.fa {
+  font-size: 25px;
+}
+
+.checked {
+  color: orange;
+}
+
+/* Three column layout */
+.side {
+  float: left;
+  width: 15%;
+  margin-top: 10px;
+}
+
+.middle {
+  float: left;
+  width: 70%;
+  margin-top: 10px;
+}
+
+/* Place text to the right */
+.right {
+  text-align: right;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The bar container */
+.bar-container {
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  color: white;
+}
+
+/* Individual bars */
+.bar-5 {width: 60%; height: 18px; background-color: #04AA6D;}
+.bar-4 {width: 30%; height: 18px; background-color: #2196F3;}
+.bar-3 {width: 10%; height: 18px; background-color: #00bcd4;}
+.bar-2 {width: 4%; height: 18px; background-color: #ff9800;}
+.bar-1 {width: 15%; height: 18px; background-color: #f44336;}
+
+/* Responsive layout - make the columns stack on top of each other instead of next to each other */
+@media (max-width: 400px) {
+  .side, .middle {
+    width: 100%;
+  }
+  /* Hide the right column on small screens */
+  .right {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 960px) { 

@@ -2,9 +2,11 @@ package start.JavaProject.data.UserDetails;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+import start.JavaProject.data.Entity.Menu;
 import start.JavaProject.data.Entity.User;
 
 import java.util.Collection;
+import java.util.List;
 
 public class OurUserDetails implements UserDetails {
     private User user;
@@ -28,10 +30,9 @@ public class OurUserDetails implements UserDetails {
         return user.getEmail();
     }
 
-    public String getFirstnameAndLastName(){
-        return user.getUsername();
-    }
+    public List<Menu> getMenu(){return user.getMenu();}
 
+    public String getEmail(){return user.getEmail();}
 
     @Override
     public boolean isAccountNonExpired() {

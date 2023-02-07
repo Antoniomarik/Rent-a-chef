@@ -9,37 +9,68 @@ public class Menu {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
-
-    @Column(name = "user_id")
-    private long user_id;
+    @Column(name = "menu_id")
+    private long menu_id;
 
     @Column(name = "price")
     private long price;
 
+    @Column(name="menutype")
+    private String menutype;
+
     @Column(name = "max_peoples")
     private long max_peoples;
+
+    public String getMenutype() {
+        return menutype;
+    }
+
+    public void setMenutype(String menutype) {
+        this.menutype = menutype;
+    }
 
     @Column(name = "menu_description")
     private String menuDescription;
 
-    @Column(name = "photo_id")
-    private long photoID;
+    @Column (name="dateavailable")
+    private String dateavailable;
 
-    @ManyToOne
-    @JoinColumn(name = "Menuid")
-    private User user;
-
-    @OneToMany(mappedBy = "menu")
-    private List<Photos> photo;
-
-
-    public long getId() {
-        return user_id;
+    public String getDateavailable() {
+        return dateavailable;
     }
 
-    public void setId(long id) {
-        this.user_id = id;
+    public void setDateavailable(String dateavailable) {
+        this.dateavailable = dateavailable;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "userId")
+    private User user;
+    @OneToMany(mappedBy = "menu" )
+    private List<Photos> photo;
+
+    public long getMenu_id() {
+        return menu_id;
+    }
+
+    public void setMenu_id(long menu_id) {
+        this.menu_id = menu_id;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public List<Photos> getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(List<Photos> photo) {
+        this.photo = photo;
     }
 
     public long getPrice() {
@@ -66,11 +97,8 @@ public class Menu {
         this.menuDescription = menuDescription;
     }
 
-    public long getPhotoID() {
-        return photoID;
-    }
 
-    public void setPhotoID(long photoID) {
-        this.photoID = photoID;
-    }
+
+
+
 }

@@ -26,6 +26,6 @@ public class rentachefController {
         List<User> listUsers = userRepo.findAll();
         //List<Menu> listOfMenus = menuRepo.find;
         model.addAttribute("listUsers", listUsers);
-        return "rentachef";
+        return "search";
     }
 }

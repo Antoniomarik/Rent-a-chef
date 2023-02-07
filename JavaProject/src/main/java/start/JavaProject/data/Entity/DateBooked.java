@@ -10,7 +10,7 @@ public class DateBooked {
     private long datebooked_id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "userId")
     private User user;
 
     @Column(name = "date_min")

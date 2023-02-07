@@ -8,21 +8,20 @@
    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      body{
+      background-image:url("chef.jpeg");
+      }
+      nav{
+         background-image:url("chefBlurred.jpeg");
+      }
+   </style>
+
 </head>
 
 <body>
-   <nav>
-      <ul>
-         <li class="items"><a href="/Users/admin/Desktop/rentChef/index.html">HOME</a></li>
-         <li class="items"><a href="#">ABOUT</a></li>
-         <li class="items"><a href="#">Rent A Chef</a></li>
-         <li class="items"><a href="#">CONTACT</a></li>
-         <li class="items"><a href="/Users/admin/Desktop/rentChef/signin.html">BECOME CHEF</a></li>
-         <li class="btn"><a href="#"><i class="fas fa-bars"></i></a></li>
-      </ul>
-     
-     
-   </nav>
+<div th:insert="index :: navbar">  </div>
 
    <div class="container">
       <div class="card">
@@ -34,44 +33,22 @@
                   <img src="/Users/admin/Desktop/rentChef/img/chefProfile.jpg">
                   <br>
                   <br>
-                  <label for="name">Name:</label> <a th:object="${name}">Horvat</a><button class="edit">Change</button>    
-                  <label for="email">E-mail:</label> <a th:object="${email}">horvat@gmail.com</a><<button class="edit">Change</button>    
-                  <label for="password">Password:</label> <a th:object="${password}">********</a><button class="edit">Change</button>  
-                  <label for="location">Location:</label> <a th:object="${location}">Split</a><button class="edit">Change</button>    
+                   <label for="name">Name:</label><a><tr th:each="user: ${user}"><td th:text="${user.username}"></td></tr></a><button class="edit">Change</button>
+                  <label for="email">E-mail:</label><a><tr th:each="user: ${user}"><td th:text="${user.email}"></td></tr></a><button class="edit">Change</button>
+                  <label for="password">Password:</label>******<button class="edit">Change</button>
+                   <label for="location">Location:</label><a><tr th:each="user: ${user}"><td th:text="${user.location}"></td></tr></a><button class="edit">Change</button>
                   <br>
 
                    <div id="wrap">
       <div id="columns" class="columns_4">
-         <figure>
-            <img src="#">
-            <figcaption th:object="${menuType}"></figcaption>
-            <span class="price">$88</span>
-            <a class="button" href="#">Delete</a>
-            <a class="button" href="#">Edit</a>
-         </figure>
 
          <!-- Ovdi izmedu u 57oj liniji san maka tekst jer ka vucemo tekst iz baze za ime menia  nezz jel to dobro ili triba i rucno dodat tekst  javi -->
    
-         <figure>
+         <figure th:each="menus: ${menus}">
             <img src="#">
-            <figcaption th:object="${menuType}"></figcaption>
-            <span class="price">$73</span>
-            <a class="button" href="#">Delete</a>
-            <a class="button" href="#">Edit</a>
-         </figure>
-   
-         <figure>
-           <img src="#">
-           <figcaption th:object="${menuType}"></figcaption>
-           <span class="price">$33</span>
-            <a class="button" href="#">Delete</a>
-            <a class="button" href="#">Edit</a>
-         </figure>
-         <figure>
-           <img src="#">
-           <figcaption th:object="${menuType}"></figcaption>
-           <span class="price">$33</span>
-            <a class="button" href="#">Delete</a>
+            <figcaption th:text="${menus.menutype}"></figcaption>
+            <span class="price" th:text="${menus.price} + ' $'"><td></td></span >
+            <a class="button" th:href="@{/deleteMenu(menuId=${menus.menu_id})}">Delete</a>
             <a class="button" href="#">Edit</a>
          </figure>
   
@@ -79,11 +56,15 @@
 
                 
  
-                  <a class="button" type="submit" href="#">ADD NEW MENU</button>
-                  
-               </form>  
+                       <a class="button" type="submit" th:href="@{/addmenu}">ADD NEW MENU</a>
 
-               <a class="button" href="#">Log out</a>
+
+               </form>
+                <div class="no class">
+                    <form class="no class" th:action="@{/logout}" method="post">
+                        <input type="submit" value="Sign out"/>
+                    </form>
+                </div>
 
               
             </div>

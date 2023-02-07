@@ -1,5 +1,6 @@
 package start.JavaProject.data.Service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import start.JavaProject.data.Entity.Menu;
 import start.JavaProject.data.Repository.MenuRepository;
@@ -9,6 +10,7 @@ import java.util.List;
 @Service
 public class MenuService {
 
+    @Autowired
     MenuRepository menuRepo;
 
     public Menu createMenu (Menu menu){return menuRepo.save(menu);}

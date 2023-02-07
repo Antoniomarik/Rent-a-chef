@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<!-- Created By Mima -->
+<head>
+   <meta charset="utf-8">
+   <title>Rent A Chef</title>
+   <link rel="stylesheet" href="addMenu.css">
+   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      body{
+      background-image:url("chef.jpeg");
+      }
+      nav{
+         background-image:url("chefBlurred.jpeg");
+         padding: 40px 40px;
+      }
+   </style>
+
+</head>
+
+<body>
+<div th:insert="index :: navbar">  </div>
+
+   <div class="container">
+      <div class="card">
+         
+         <div class="inner-box" id="card">
+            <div class="card-front">
+               <h2>ADD MENU</h2>
+               <form th:action="@{/addmenu}" th:object ="${menu}" method="post">
+                   <!-- Created By Mima   <label for="menu">Menu type:</label>
+                      <input type="text" placeholder="Add menu type" th:field="*{menuDescription}">
+
+                  <label for="location">Your Location:</label>
+                       <input type="text" placeholder="Add your location" >-->
+
+                  <label for="Price">Price:</label>
+                       <input type="text" placeholder="Add your price" th:field="*{price}">
+
+                  <label for="num">Persons</label>
+                   <input type="text" placeholder="Number of peoples" th:field="*{max_peoples}">
+
+                   <label for="type">Menu Type</label>
+                   <input type="text" placeholder="Add menu type" th:field="*{menutype}">
+
+                   <label for="type">Date Available</label>
+                   <input type="date" placeholder="dinnerDate" th:field="*{dateavailable}">
+
+                <label for="file-upload">Choose a menu picture:</label>
+               <input type="file" class="file-upload" name="picture">
+
+                <textarea id="combo" type="input-box" class="input-box" placeholder="Menu description" th:field="*{menuDescription}"></textarea>
+
+                  <button type="submit">Submit</button>
+                  <a th:href="@{/dashboard}">Return</a>
+
+                  
+               </form>           
+            </div>
+         </div>
+      </div>
+   </div>  
+   
+   <script>
+      $(document).ready(function(){
+        $('.btn').click(function(){
+          $('.items').toggleClass("show");
+          $('ul li').toggleClass("hide");
+        });
+      });
+   </script>
+
+</body>
+</html>

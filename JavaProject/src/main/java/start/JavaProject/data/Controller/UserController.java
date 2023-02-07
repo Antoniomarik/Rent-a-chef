@@ -1,19 +1,21 @@
 package start.JavaProject.data.Controller;
 
-//import jakarta.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import start.JavaProject.data.Entity.Menu;
 import start.JavaProject.data.Entity.User;
+import start.JavaProject.data.Repository.MenuRepository;
 import start.JavaProject.data.Repository.UserRepository;
+import start.JavaProject.data.Service.MenuService;
 import start.JavaProject.data.Service.UserService;
+
 
 import java.util.List;
 
-import static java.sql.Types.NULL;
 
 @Controller
 @RequestMapping("")
@@ -23,8 +25,12 @@ public class UserController {
     UserService userService;
     @Autowired
     UserRepository userRepo;
+    @Autowired
+    MenuService menuService;
+    @Autowired
+    MenuRepository menuRepository;
 
-    //Ova dvije metode se odnost na register page
+
     @GetMapping("/signin")
     public String regUer (Model model) {
         model.addAttribute("user", new User());
@@ -45,13 +51,6 @@ public class UserController {
     @GetMapping("/uc")
     public String uc (){
         return "/uc";
-    }
-
-    //failed
-    @GetMapping("/failed")
-    public String regUera (Model model) {
-        model.addAttribute("user", new User());
-        return "exceptionSignin";
     }
 
     @GetMapping("/")
@@ -85,10 +84,6 @@ public class UserController {
         return "contact";
     }
 
-    @GetMapping("/dashboard")
-    public String getDashboard(){
-        return "dashboard";
-    }
 
 
     @GetMapping("/search")
@@ -99,4 +94,22 @@ public class UserController {
         }
         return "search";
     }
+
+    @GetMapping("/deleteMenu")
+    public String deleteMenu(@RequestParam long menuId){
+        menuService.deleteMenu(menuId);
+        return "redirect:dashboard";
+    }
+
+    @GetMapping("/filtering")
+    public String filtering(Model model,@RequestParam(required = false) String dateavailable,@RequestParam(required = false) String menutype){
+
+
+        List<Menu> menus = menuRepository.findbydateandtype(dateavailable, menutype);
+        if(menus.isEmpty()== true){System.out.println("uslo");}
+        else
+            model.addAttribute("menus",menus);
+             return "search";
+    }
+
 }

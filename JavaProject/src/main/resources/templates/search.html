@@ -2,12 +2,12 @@
 <head>
   <meta charset="utf-8">
   <title>Rent A Chef</title>
-  <link rel="stylesheet" href="/rentachef.css">
+  <link rel="stylesheet" href="rentachef.css">
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
+    <style>
       body{
       background-image:url("chef.jpeg");
       }
@@ -15,6 +15,7 @@
          background-image:url("chefBlurred.jpeg");
       }
    </style>
+  
 
 </head>
 
@@ -23,95 +24,186 @@
 <div th:insert="index :: navbar">  </div>
 
 <div class="container">
+  <form>
     <h3>Rent A Chef</h3>
-    <form th:action="@{/search}" th:object="${location}" method="get">
-    <div class="search">
-      <input type="text" name="location" th:value="${location}"/>
-      <input type="submit" value="Search"/>
-      <button type="submit" class="searchButton">
+    <form th:action="@{/search}" th:object="${location}" method="get" class ="search">
+      <div class="search">
+        <input type="text" name="location" th:value="${location}" placeholder="Enter location">
+        <button type="Submit" class="searchButton">
         <i class="fa fa-search"></i>
-      </button>
-    </div>
-  </form>
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Location</th>
-    </tr>
-    <tr th:each="user : ${users}">
-      <td th:text="${user.username}"></td>
-      <td th:text="${user.location}"></td>
-    </tr>
-  </table>
+        </button>
+      </div>
+    </form>
+    <form th:action="@{/filtering}" th:object="${menu}" method="get">
+      <br><br><br><br><br><br><br><br><br>
+      <label for="food">Food type:</label>
+      <select name="menutype" th:value="${menutype}">
+        <option name="menutype" value="vegan" th:value="Vegan">Vegan</option>
+        <option value="vegeterian" th:value="Vegetarian">Vegeterian</option>
+        <option value="glutenfree" th:value="${menutype}">Gluten free</option>
+        <option value="meat" th:value="${menutype}">Meat</option>
+      </select>
 
+    <label>Date</label>
+    <input type="date"  name= "dateavailable" placeholder="dinnerDate" th:value="${dateavailable}">
+    <br><br>
+    <div class="btn-box">
+      <button type="submit">Submit</button>
+    </div>
+
+  </form>
 </div>
+
 
 <div id="wrap">
-  <div id="columns" class="columns_4">
-    <figure th:each="user: ${listUsers}">
-      <img src="/Users/admin/Desktop/rentChef/img/chefProfile.jpg">
-      <figcaption th:text="${user.username}">Username</figcaption>
-      <a class="button" href="#onclick">Rent</a>
-    </figure>
-  </div>
+      <div id="columns" class="columns_4">
+          <figure th:each="user: ${users}">
+              <img src="/Users/admin/Desktop/rentChef/img/chefProfile.jpg">
+              <figcaption th:text="${user.username}">Username</figcaption>
+              <figcaption th:text="${user.location}">Username</figcaption>
+              <a class="button" href="#onclick">Rent</a>
+          </figure>
+   </div>
 
-</div>
-
-<div id="onclick" class="overlay">
-  <div class="popup">
-    <h2>Mate Jankovic</h2>
-    <a class="close" href="#">&times;</a>
-    <div class="content">
-      <img class="pic" style='height: 20%;width: 20%;object-fit: contain' src="/Users/admin/Desktop/rentChef/img/chefProfile.jpg">
-      <br>
-      <a>Mate Jankovic</a>
-      <br>
-      <a>Split</a>
-      <br>
-      <a>2023</a>
-      <br>
-      <a>10.01. - 12.01.</a>
-      <br>
-      <a>Choose menu</a>
-      <br>
-      <br>
-
-
-      <figure>
-        <img src="/Users/admin/Desktop/rentChef/img/food.jpg">
-        <figcaption>Vegan Menu</figcaption>
-        <span class="description">Description</span>
-        <br>
-        <span class="price">$20</span>
-        <a class="button" href="#onclick">Rent</a>
-      </figure>
-
-
-      <figure>
-        <img src="/Users/admin/Desktop/rentChef/img/food.jpg">
-        <figcaption>Meat Menu</figcaption>
-        <span class="description">Description</span>
-        <br>
-        <span class="price">$20</span>
-        <a class="button" href="#onclick">Rent</a>
-      </figure>
-
-
-      <figure>
-        <img src="/Users/admin/Desktop/rentChef/img/food.jpg">
-        <figcaption>Gluten free Menu</figcaption>
-        <span class="description">Description</span>
-        <br>
-        <span class="price">$20</span>
-        <a class="button" href="#onclick">Rent</a>
-      </figure>
-
-
-
+<!--novo dodano , test-->
+    <div id="wrap">
+        <div id="columns" class="columns_4">
+            <figure th:each="menus: ${menus}">
+                <img src="#">
+            <figcaption th:text="${menus.menutype}"></figcaption>
+            <span class="price" th:text="${menus.price} + ' $'"><td></td></span >
+            </figure>
+        </div>
     </div>
-  </div>
+    <!--novo dodano , test-->
 
-</div>
+
+
+   <div id="onclick" class="overlay">
+      <div class="popup">
+         <h2>Mate Jankovic</h2>
+         <a class="close" href="#">&times;</a>
+         <div class="content">
+            <img class="pic" style='height: 20%;width: 20%;object-fit: contain' src="/Users/admin/Desktop/rentChef/img/chefProfile.jpg">
+            <br>
+            <a>Mate Jankovic</a>
+            <br>
+            <a>Split</a>
+            <br>
+            <a>2023</a>
+            <br>
+            <a>10.01. - 12.01.</a>
+            <br>
+
+
+            <span class="heading">User Rating</span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <p>4.1 average based on 254 reviews.</p>
+            <hr style="border:3px solid #f1f1f1">
+
+            <div class="row">
+            <div class="side">
+            <div>5 star</div>
+            </div>
+            <div class="middle">
+               <div class="bar-container">
+                  <div class="bar-5"></div>
+               </div>
+            </div>
+            <div class="side right">
+               <div>150</div>
+            </div>
+            <div class="side">
+               <div>4 star</div>
+            </div>
+            <div class="middle">
+               <div class="bar-container">
+                  <div class="bar-4"></div>
+               </div>
+            </div>
+            <div class="side right">
+               <div>63</div>
+            </div>
+            <div class="side">
+               <div>3 star</div>
+            </div>
+            <div class="middle">
+               <div class="bar-container">
+                  <div class="bar-3"></div>
+               </div>
+            </div>
+            <div class="side right">
+               <div>15</div>
+            </div>
+            <div class="side">
+               <div>2 star</div>
+            </div>
+            <div class="middle">
+               <div class="bar-container">
+                  <div class="bar-2"></div>
+               </div>
+            </div>
+            <div class="side right">
+               <div>6</div>
+            </div>
+            <div class="side">
+               <div>1 star</div>
+            </div>
+            <div class="middle">
+               <div class="bar-container">
+                  <div class="bar-1"></div>
+               </div>
+            </div>
+            <div class="side right">
+               <div>20</div>
+            </div>
+            </div>
+            <br>
+            <br>
+            <h2>Choose menu</h2>
+            <br>
+
+   <div id="wrap">
+      <div id="columns" class="columns_4">
+         <figure>
+            <img src="/Users/admin/Desktop/rentChef/img/food.jpg">
+            <figcaption>Meat menuy</figcaption>
+            <span class="price">$88</span>
+            <a class="button" href="/Users/admin/Desktop/rentChef/index.html">Rent</a>
+         </figure>
+   
+         <figure>
+            <img src="/Users/admin/Desktop/rentChef/img/food.jpg">
+            <figcaption>Vege menu</figcaption>
+            <span class="price">$73</span>
+            <a class="button" href="/Users/admin/Desktop/rentChef/index.html">Rent</a>
+         </figure>
+   
+         <figure>
+           <img src="/Users/admin/Desktop/rentChef/img/food.jpg">
+           <figcaption>Gluten free menu</figcaption>
+           <span class="price">$33</span>
+           <a class="button" href="/Users/admin/Desktop/rentChef/index.html">Rent</a>
+         </figure>
+         <figure>
+           <img src="/Users/admin/Desktop/rentChef/img/food.jpg">
+           <figcaption>Gluten free menu</figcaption>
+           <span class="price">$33</span>
+           <a class="button" href="/Users/admin/Desktop/rentChef/index.html">Rent</a>
+         </figure>
+  
+   </div>
+
+      
+
+         </div>
+      </div>
+      
+   </div>
 
 
 <script>
