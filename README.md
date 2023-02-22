@@ -44,12 +44,6 @@ Technologies & languages
    <li>MySql
   </ul>
 
-Authors
----
-Mijo Matijevic
-<br>
-Antonio Maric
-<br>
-Karlo Hrabar
+
 
   
